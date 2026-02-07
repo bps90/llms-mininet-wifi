@@ -1,0 +1,1 @@
+Crie um script em Python para o Mininet-WiFi que simule uma rede com duas estações sem fio, um ponto de acesso e um controlador. As estações devem estar conectadas ao ponto de acesso via Wi-Fi e conseguir se comunicar entre si.
