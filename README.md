@@ -23,15 +23,8 @@ Este README.md está organizado da seguinte forma:
 ## Artefatos incluídos
 O repositório contém:
 
-- `scripts/`
-  - `prompts/` – arquivos de texto com os prompts simples e específicos usados para cada cenário (básico, intermediário, avançado).
-  - `generated/` – scripts Python gerados pelos modelos para cada combinação cenário × prompt × modelo (organizados em subpastas).
-  - `examples/` – cópia de referência do `handover.py` do repositório oficial do Mininet‑WiFi e script(s) gerados pelos modelos para esse cenário.
-- `analysis/`
-  - `data/` – resultados em CSV (por exemplo, uma linha por script com colunas: `modelo`, `cenario`, `tipo_prompt`, `correcao_funcional`, `necessidade_ajuste`, `tipo_erro`).
-  - `notebooks/` ou `analysis.py` – código para gerar Tabelas 2, 3 e Figura 2 (análise fatorial e ANOVA).
-- `ollama/`
-  - arquivos de configuração e exemplos de prompts usados com o `gpt‑oss‑20B`.
+- `prompts/` – arquivos de texto com os prompts simples e específicos usados para cada cenário (básico, intermediário, avançado).
+- `scripts/` – scripts Python gerados pelos modelos para cada combinação cenário × prompt × modelo (organizados em subpastas).
 - `README.md` – este arquivo.
 - `LICENSE` – licença do projeto.
 
@@ -184,7 +177,28 @@ O objetivo é validar a execução de um script gerado por um dos modelos avalia
 
 As entradas necessárias para executar os experimentos do artigo estão organizadas em duas estruturas principais: (i) **scripts gerados pelos modelos** e (ii) **prompts utilizados na geração**.
 
-### 1) Scripts gerados (por cenário)
+### 1) Prompts utilizados
+
+Os prompts estão na pasta `prompts/` e incluem:
+
+- `prompts/contextualizacao`  
+  Contém o texto de **contextualização** aplicado antes dos prompts de cenário, para padronizar o entendimento do modelo sobre o objetivo e o ambiente.
+
+- Prompts de cenário (por nível e tipo):
+  - `prompts/p-basico_simples`
+  - `prompts/p-basico_especifico`
+  - `prompts/p-interm_simples`
+  - `prompts/p-interm_especifico`
+  - `prompts/p-avanc_simples`
+  - `prompts/p-avanc_especifico`
+
+Esses arquivos representam os **prompts de cenário** (básico/intermediário/avançado), cada um em duas versões:
+- **simples**: descrição generalista do cenário
+- **específico/detalhado**: descrição com maior nível de detalhe e parâmetros relevantes
+
+---
+
+### 2) Scripts gerados (por cenário)
 
 Os códigos gerados estão na pasta `scripts/`, organizada em três subpastas, uma para cada nível de complexidade do cenário:
 
@@ -204,27 +218,6 @@ Exemplos:
 - `s_gpt1.py`, `s_gpt2.py` / `p_gpt1.py`, `p_gpt2.py` → scripts do **GPT** (variações conforme definidas no estudo)
 
 > Observação: a pasta do cenário define o nível (básico/intermediário/avançado) e o prefixo `s_`/`p_` define o tipo de prompt.
-
----
-
-### 2) Prompts utilizados
-
-Os prompts estão na pasta `prompts/` e incluem:
-
-- `prompts/contextualizacao`  
-  Contém o texto de **contextualização** aplicado antes dos prompts de cenário, para padronizar o entendimento do modelo sobre o objetivo e o ambiente.
-
-- Prompts de cenário (por nível e tipo):
-  - `prompts/p-basico_simples`
-  - `prompts/p-basico_especifico`
-  - `prompts/p-interm_simples`
-  - `prompts/p-interm_especifico`
-  - `prompts/p-avanc_simples`
-  - `prompts/p-avanc_especifico`
-
-Esses arquivos representam os **prompts de cenário** (básico/intermediário/avançado), cada um em duas versões:
-- **simples**: descrição generalista do cenário
-- **específico/detalhado**: descrição com maior nível de detalhe e parâmetros relevantes
 
 ---
 
