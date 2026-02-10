@@ -17,7 +17,7 @@ Este README.md está organizado da seguinte forma:
 - [Preocupações com segurança](#preocupações-com-segurança)
 - [Instalação](#instalação)
 - [Teste mínimo](#teste-mínimo)
-- [#Experimentos e Avaliação](#experimentos-e-avaliação)
+- [Experimentos e Avaliação](#experimentos-e-avaliação)
 - [LICENSE](#license)
 
 ## Artefatos incluídos
@@ -162,7 +162,7 @@ O objetivo é garantir que o Mininet-WiFi foi instalado corretamente e consegue 
 O objetivo é validar a execução de um script gerado por um dos modelos avaliados no artigo (Fase 1).
 
 1. **Local do script**:
-   codigos_gerados/gemini_3_pro/cenario_basico_especifico.py
+   scripts/basico/
 
 2. **Comando**:
    ```bash
@@ -208,16 +208,16 @@ Os códigos gerados estão na pasta `scripts/`, organizada em três subpastas, u
 
 Em cada subpasta, existem múltiplos arquivos `.py`, onde **cada arquivo corresponde a um script gerado por um modelo específico**, utilizando um dos dois tipos de prompt:
 - `s_<modelo>.py`  → script gerado pelo `<modelo>` usando **prompt simples**
-- `p_<modelo>.py`  → script gerado pelo `<modelo>` usando **prompt detalhado**
+- `d_<modelo>.py`  → script gerado pelo `<modelo>` usando **prompt detalhado**
 
 Exemplos:
 - `s_gemini3.py` → script do **Gemini 3** com prompt simples
-- `p_gemini3pro.py` → script do **Gemini 3 Pro** com prompt detalhado
-- `s_claud.py` / `p_claud.py` → scripts do **Claude** (simples/detalhado)
-- `s_deepseek.py` / `p_deepseek.py` → scripts do **DeepSeek** (simples/detalhado)
-- `s_gpt1.py`, `s_gpt2.py` / `p_gpt1.py`, `p_gpt2.py` → scripts do **GPT** (variações conforme definidas no estudo)
+- `d_gemini3pro.py` → script do **Gemini 3 Pro** com prompt detalhado
+- `s_claud.py` / `d_claud.py` → scripts do **Claude** (simples/detalhado)
+- `s_deepseek.py` / `d_deepseek.py` → scripts do **DeepSeek** (simples/detalhado)
+- `s_gpt1.py`, `s_gpt2.py` / `d_gpt1.py`, `d_gpt2.py` → scripts do **GPT** (variações conforme definidas no estudo)
 
-> Observação: a pasta do cenário define o nível (básico/intermediário/avançado) e o prefixo `s_`/`p_` define o tipo de prompt.
+> Observação: a pasta do cenário define o nível (básico/intermediário/avançado) e o prefixo `s_`/`d_` define o tipo de prompt.
 
 ---
 
